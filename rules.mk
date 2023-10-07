@@ -7,3 +7,4 @@ EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = yes         # Console for debug
 COMMAND_ENABLE = yes        # Commands for debug and configuration
 SPLIT_KEYBOARD = yes
+UNICODE_ENABLE = yes
