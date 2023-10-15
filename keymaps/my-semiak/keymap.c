@@ -7,6 +7,7 @@
 #define _QWERTY 0
 #define _FN     1
 #define _NUMPAD 2
+#define _SYMBOLS    3
 
 // Some basic macros
   #define TASK   LCTL(LSFT(KC_ESC))
@@ -22,16 +23,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,    KC_S,  KC_R,    KC_N,   KC_T,   KC_K,   KC_LBRC,
     _______,    KC_X,  KC_J,    KC_B,   KC_M,   KC_Q,
     KC_LCTL,    KC_LGUI, TAB_L, TAB_R,
-                                                  KC_LSFT, KC_SPC,
+                                                  KC_LSFT, LT(_SYMBOLS,KC_SPC),
                                                   KC_LALT, KC_TAB,   
                                                   KC_LGUI, KC_PGDN,
     // right hand
-    KC_7,       KC_8,    KC_9,    KC_0,     KC_GRV,   _______,   _______,
-    KC_EQL,     KC_QUOT, KC_W,    KC_U,     KC_O,     KC_Y,     KC_SLSH,
-    KC_RBRC,    KC_C,    KC_D,    KC_E,     KC_A,     KC_I,  KC_BSLS,
+    KC_7,       KC_8,    KC_9,    KC_0,     KC_GRV,   _______,  _______,
+    KC_EQL,     KC_QUOT, KC_W,    KC_U,     KC_O,     KC_Y,     _______,
+    KC_RBRC,    KC_C,    KC_D,    KC_E,     KC_A,     KC_I,     KC_BSLS,
                 KC_P,    KC_G,    KC_COMM,  LT(_FN,KC_DOT),     KC_SLSH,  _______,
-                                  KC_LEFT, KC_DOWN,  KC_UP,    KC_RGHT,
-    KC_BSPC,    KC_ENT,
+                                  KC_LEFT, KC_DOWN,  KC_UP,     KC_RGHT,
+    LT(_SYMBOLS,KC_BSPC),    KC_ENT,
     KC_RALT,    LT(_NUMPAD,KC_ESC),
     KC_PGUP,  KC_RCTL
 ),
@@ -60,19 +61,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NUMPAD] = LAYOUT_5x7(
     // left hand
     _______,   _______,   _______,   _______,   _______,   _______,  _______,
+    _______,   _______,   KC_7,      KC_8,      KC_9,      _______,  _______,
+    _______,   _______,   KC_4,      KC_5,      KC_6,      _______,  _______,
+    _______,   _______,   KC_1,      KC_2,      KC_3,      _______,
+    _______,   _______,   KC_COMM,   KC_0,
+                                _______, _______,
+                                _______, _______,
+                                _______, _______,
+    // right hand
+                      _______,   _______,   _______,     _______,     _______,     _______,   _______,
+                      _______,   _______,   _______,     _______,     _______,     _______,   _______,
+                      _______,   _______,   KC_LEFT,     KC_DOWN,     KC_UP,       KC_RGHT,   _______,
+                                 _______,   _______,     _______,     _______,     _______,   _______,
+                                                         _______,     _______,     _______,   _______,
+         _______, _______,
+         _______, _______,
+         _______, _______
+),
+
+[_SYMBOLS] = LAYOUT_5x7(
+    // left hand
     _______,   _______,   _______,   _______,   _______,   _______,  _______,
-    _______,   _______,   _______,   _______,   _______,   _______,  _______,
-    _______,   _______,   _______,   _______,   _______,   _______,
+    _______,   KC_EXLM,   KC_AT,     KC_HASH,   KC_DLR,    KC_PERC,  _______,
+    _______,   _______,   KC_MINS,   KC_LBRC,   KC_LPRN,   KC_CIRC,  _______,
+    _______,   _______,   _______,   KC_LT,     KC_LCBR,   KC_BSLS,
     _______,   _______,   _______,   _______,
                                 _______, _______,
                                 _______, _______,
                                 _______, _______,
     // right hand
                       _______,   _______,   _______,     _______,     _______,     _______,   _______,
-                      _______,   _______,   KC_7,     KC_8,     KC_9,     _______,   _______,
-                      _______,   _______,   KC_4,     KC_5,     KC_6,     _______,   _______,
-                                 _______,   KC_1,     KC_2,     KC_3,     _______,   _______,
-                                                      KC_0,     KC_DOT,   _______,   _______,
+                      _______,   KC_ASTR,   _______,     _______,     KC_TILD,     _______,   _______,
+                      _______,   KC_AMPR,   KC_RPRN,     KC_RBRC,     KC_EQL,      _______,   _______,
+                                 KC_SLSH,   KC_RCBR,     KC_GT,       _______,     _______,   _______,
+                                                         _______,     _______,     _______,   _______,
          _______, _______,
          _______, _______,
          _______, _______
