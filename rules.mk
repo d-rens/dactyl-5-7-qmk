@@ -9,3 +9,4 @@ COMMAND_ENABLE = yes        # Commands for debug and configuration
 SPLIT_KEYBOARD = yes
 UNICODE_ENABLE = yes
 VIA_ENABLE = yes
+MOUSEKEY_ENABLE = yes
